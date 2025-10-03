@@ -288,6 +288,19 @@
 
 		<a data-scroll href="#header" id="scroll-to-top"><i class="arrow_carrot-up"></i></a>
 	
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const params = new URLSearchParams(window.location.search);
+                if (params.get("status") === "success") {
+                    alert("✅ Votre message a bien été envoyé !");
+                } else if (params.get("status") === "error") {
+                    alert("❌ Une erreur est survenue lors de l'envoi.");
+                } else if (params.get("status") === "empty") {
+                    alert("⚠️ Veuillez remplir tous les champs.");
+                }
+            });
+        </script>
+
 		<!-- jQuery Lib -->
 		<script src="js/vendor/jquery-1.12.4.min.js"></script>
 		<!-- Bootstrap JS -->
